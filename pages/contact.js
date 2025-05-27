@@ -68,7 +68,7 @@ export default function Contact() {
         <ContactSection>
           <ContactType>Share Your Stories</ContactType>
           <ContactInfo>
-            If you have any stories or confessions send them into us at{' '}
+            If you have any stories or confessions send them in to us at{' '}
             <a href="mailto:stories@thenightshiftreport.com">
               stories@thenightshiftreport.com
             </a>
