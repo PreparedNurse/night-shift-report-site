@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from '@emotion/styled';
 
 const Header = styled.header`
@@ -19,21 +20,10 @@ const Nav = styled.nav`
   margin: 0 auto;
 `;
 
-const Logo = styled.div`
-  display: block;
+const LogoContainer = styled.div`
   width: 200px;
   height: 60px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: left;
-  }
-
-  &:hover {
-    opacity: 0.9;
-  }
+  position: relative;
 `;
 
 const MenuItems = styled.div`
@@ -59,11 +49,17 @@ const Layout = ({ children }) => {
     <div>
       <Header>
         <Nav>
-          <Logo>
-            <Link href="/" style={{ display: 'block', height: '100%' }}>
-              <img src="/logo.png" alt="The Night Shift Report Logo" />
+          <LogoContainer>
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="The Night Shift Report Logo"
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'left' }}
+                priority
+              />
             </Link>
-          </Logo>
+          </LogoContainer>
           <MenuItems>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
