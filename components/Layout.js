@@ -13,10 +13,27 @@ const Header = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+`;
+
+const Logo = styled.div`
+  display: block;
+  width: 200px;
+  height: 60px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 const MenuItems = styled.div`
@@ -42,6 +59,11 @@ const Layout = ({ children }) => {
     <div>
       <Header>
         <Nav>
+          <Logo>
+            <Link href="/" style={{ display: 'block', height: '100%' }}>
+              <img src="/logo.png" alt="The Night Shift Report Logo" />
+            </Link>
+          </Logo>
           <MenuItems>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
