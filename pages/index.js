@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
 const HeroSection = styled.div`
   background-color: #000000;
@@ -61,13 +62,19 @@ const Button = styled.button`
 `;
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/about');
+  };
+
   return (
     <Layout>
       <HeroSection>
         <HeroContent>
           <h1>Welcome to <span>The Night Shift Report</span></h1>
           <p>Real talk from the other side of the clock. Stories, rants, & chaos from healthcare's night crew.</p>
-          <Button>Join Now</Button>
+          <Button onClick={handleClick}>Where To Find Us</Button>
         </HeroContent>
       </HeroSection>
     </Layout>
