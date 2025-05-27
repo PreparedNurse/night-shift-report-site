@@ -6,11 +6,11 @@ import styled from '@emotion/styled';
 const Header = styled.header`
   background-color: #000000;
   padding: 1rem 2rem;
-  position: fixed;
   width: 100%;
-  top: 0;
-  z-index: 1000;
   position: relative;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 
   &::before {
     content: '';
@@ -20,11 +20,11 @@ const Header = styled.header`
     right: 0;
     bottom: 0;
     background-image: url('/ekg-background.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
     opacity: 0.2;
-    z-index: -1;
+    z-index: 0;
   }
 `;
 
@@ -36,6 +36,7 @@ const Nav = styled.nav`
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  width: 100%;
 `;
 
 const LogoContainer = styled.div`
@@ -91,4 +92,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout; 
+export default Layout;
