@@ -19,10 +19,19 @@ const Nav = styled.nav`
   margin: 0 auto;
 `;
 
-const Logo = styled.div`
-  img {
-    height: 50px;
-  }
+const LogoLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+  width: 200px;
+  height: 60px;
+`;
+
+const LogoImage = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left;
 `;
 
 const MenuItems = styled.div`
@@ -48,12 +57,12 @@ const Layout = ({ children }) => {
     <div>
       <Header>
         <Nav>
-          <Logo>
-            {/* Replace with your logo */}
-            <Link href="/">
-              <img src="/logo.png" alt="Logo" />
-            </Link>
-          </Logo>
+          <LogoLink href="/">
+            <LogoImage 
+              src="/logo.png" 
+              alt="The Night Shift Report Logo"
+            />
+          </LogoLink>
           <MenuItems>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
