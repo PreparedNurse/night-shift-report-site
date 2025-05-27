@@ -10,6 +10,22 @@ const Header = styled.header`
   width: 100%;
   top: 0;
   z-index: 1000;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/ekg-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+    opacity: 0.2;
+    z-index: -1;
+  }
 `;
 
 const Nav = styled.nav`
@@ -18,6 +34,8 @@ const Nav = styled.nav`
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 
 const LogoContainer = styled.div`
@@ -35,6 +53,7 @@ const MenuItems = styled.div`
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
     &:hover {
       color: #ff0000;
