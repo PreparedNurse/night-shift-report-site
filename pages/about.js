@@ -54,12 +54,12 @@ export default function About() {
   const socialLinks = [
     {
       name: 'YouTube',
-      url: '#', // Replace with your YouTube URL
+      url: 'https://www.youtube.com/@thenightshiftreport', // Fixed YouTube URL format
       icon: '📺'
     },
     {
       name: 'Instagram',
-      url: '#', // Replace with your Instagram URL
+      url: 'https://www.instagram.com/thenightshiftreport',
       icon: '📸'
     },
     // Add more social links here as needed
