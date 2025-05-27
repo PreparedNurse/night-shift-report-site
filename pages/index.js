@@ -66,7 +66,7 @@ export default function Home() {
       <HeroSection>
         <HeroContent>
           <h1>Welcome to <span>The Night Shift Report</span></h1>
-          <p>Get exclusive access to bonus episodes, videos, merch, and fan meet ups. Join our members-only club today!</p>
+          <p>Real talk from the other side of the clock. Stories, rants, & chaos from healthcare's night crew.</p>
           <Button>Join Now</Button>
         </HeroContent>
       </HeroSection>
