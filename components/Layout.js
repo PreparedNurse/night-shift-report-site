@@ -57,8 +57,6 @@ const Layout = ({ children }) => {
           <MenuItems>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
-            <Link href="/merch">Merch</Link>
-            <Link href="/extras">Extras</Link>
             <Link href="/contact">Contact Us</Link>
           </MenuItems>
         </Nav>
