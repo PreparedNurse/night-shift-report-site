@@ -65,7 +65,7 @@ export default function Home() {
     <Layout>
       <HeroSection>
         <HeroContent>
-          <h1>Welcome to <span>Your Podcast</span></h1>
+          <h1>Welcome to <span>The Night Shift Report</span></h1>
           <p>Get exclusive access to bonus episodes, videos, merch, and fan meet ups. Join our members-only club today!</p>
           <Button>Join Now</Button>
         </HeroContent>
