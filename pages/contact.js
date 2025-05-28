@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import styled from '@emotion/styled';
+import StorySubmissionForm from '../components/StorySubmissionForm';
 
 const ContactContainer = styled.div`
   max-width: 1200px;
@@ -59,8 +60,8 @@ export default function Contact() {
           <ContactType>Business Inquiries</ContactType>
           <ContactInfo>
             For any business inquiries reach out to us at{' '}
-            <a href="mailto:contact@thenightshiftreport.com">
-              contact@thenightshiftreport.com
+            <a href="mailto:info@thenightshiftreport.com">
+              info@thenightshiftreport.com
             </a>
           </ContactInfo>
         </ContactSection>
@@ -68,12 +69,9 @@ export default function Contact() {
         <ContactSection>
           <ContactType>Share Your Stories</ContactType>
           <ContactInfo>
-            If you have any stories or confessions send them in to us at{' '}
-            <a href="mailto:stories@thenightshiftreport.com">
-              stories@thenightshiftreport.com
-            </a>
-            {' '}and we may read and/or discuss them on the next episode!
+            Use the form below to submit your stories and confessions. We may read and/or discuss them on the next episode!
           </ContactInfo>
+          <StorySubmissionForm />
         </ContactSection>
       </ContactContainer>
     </Layout>
