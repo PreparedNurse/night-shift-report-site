@@ -1,4 +1,3 @@
-import { ClerkProvider } from '@clerk/nextjs';
 import { Global, css } from '@emotion/react';
 
 const globalStyles = css`
@@ -23,10 +22,10 @@ const globalStyles = css`
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ClerkProvider {...pageProps}>
+    <>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
-    </ClerkProvider>
+    </>
   );
 }
 
