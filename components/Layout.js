@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
-import { UserButton, SignInButton, useUser } from '@clerk/nextjs';
 
 const Header = styled.header`
   background-color: #000000;
@@ -64,30 +63,24 @@ const MenuItems = styled.div`
   }
 `;
 
-const AuthContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 2rem;
-`;
-
-const SignInButtonStyled = styled.button`
+const SignInButton = styled.button`
   background-color: #ff0000;
   color: white;
+  padding: 0.5rem 1.5rem;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 5px;
   font-weight: 500;
+  cursor: pointer;
   transition: background-color 0.3s;
-
+  margin-right: auto;
+  margin-left: -1rem;
+  
   &:hover {
     background-color: #cc0000;
   }
 `;
 
 const Layout = ({ children }) => {
-  const { isSignedIn, user } = useUser();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -106,19 +99,10 @@ const Layout = ({ children }) => {
             </Link>
           </LogoContainer>
           <MenuItems>
+            <SignInButton>Sign In</SignInButton>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
-            {isSignedIn && <Link href="/after-hours">After Hours</Link>}
-            <AuthContainer>
-              {!isSignedIn ? (
-                <SignInButton mode="modal">
-                  <SignInButtonStyled>Sign In</SignInButtonStyled>
-                </SignInButton>
-              ) : (
-                <UserButton afterSignOutUrl="/" />
-              )}
-            </AuthContainer>
           </MenuItems>
         </Nav>
       </Header>
