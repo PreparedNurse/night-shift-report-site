@@ -63,9 +63,9 @@ const MenuItems = styled.div`
   }
 `;
 
-const SignInButton = styled.button`
+const SignInButton = styled.a`
   background-color: #ff0000;
-  color: white;
+  color: white !important;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -74,6 +74,7 @@ const SignInButton = styled.button`
   transition: background-color 0.3s;
   margin-right: auto;
   margin-left: -1rem;
+  text-decoration: none;
   
   &:hover {
     background-color: #cc0000;
@@ -99,7 +100,7 @@ const Layout = ({ children }) => {
             </Link>
           </LogoContainer>
           <MenuItems>
-            <SignInButton>Sign In</SignInButton>
+            <SignInButton as="span">Sign In</SignInButton>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
