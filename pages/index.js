@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
+// Force Vercel deployment - timestamp: May 29, 2024 - 20:45
 // Forcing new deployment - May 29, 2024
 const HeroSection = styled.div`
   background-color: #000000;
