@@ -23,7 +23,7 @@ const globalStyles = css`
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
     </ClerkProvider>

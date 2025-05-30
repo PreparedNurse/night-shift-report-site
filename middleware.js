@@ -1,28 +1,27 @@
-import { withClerkMiddleware } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+import { authMiddleware } from "@clerk/nextjs";
 
-const publicPaths = ["/", "/about", "/episodes", "/contact"];
-
-function isPublic(path) {
-  return publicPaths.find((x) =>
-    path.match(new RegExp(`^${x}$`))
-  );
-}
-
-export default withClerkMiddleware((req) => {
-  if (isPublic(req.nextUrl.pathname)) {
-    return NextResponse.next();
-  }
-  // if the user is not signed in redirect them to the sign in page.
-  const { userId } = req.auth;
-  if (!userId) {
-    const signInUrl = new URL('/sign-in', req.url);
-    signInUrl.searchParams.set('redirect_url', req.url);
-    return NextResponse.redirect(signInUrl);
-  }
-  return NextResponse.next();
+// This example protects all routes including api/trpc routes
+// Please edit this to allow other routes to be public as needed.
+// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your middleware
+export default authMiddleware({
+  // Routes that can be accessed while signed out
+  publicRoutes: ["/", "/about", "/episodes", "/contact"],
+  // Routes that can always be accessed, and have
+  // no authentication information
+  ignoredRoutes: ["/api/webhook"]
 });
 
+// Stop Middleware running on static files and public folder
 export const config = {
-  matcher: '/((?!_next/image|_next/static|favicon.ico).*)',
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next
+     * - static (static files)
+     * - favicon.ico (favicon file)
+     * - public folder
+     */
+    "/((?!static|.*\\..*|_next|favicon.ico).*)",
+    "/",
+  ],
 }; 
