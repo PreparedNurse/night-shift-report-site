@@ -1,5 +1,5 @@
 {
-  "name": "night-shift-report-site",
+  "name": "night-shift-report-site-v2",
   "version": "1.0.1",
   "scripts": {
     "dev": "next dev",
