@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
+import { useClerk } from '@clerk/nextjs';
 
 const Header = styled.header`
   background-color: #000000;
@@ -83,6 +84,11 @@ const SignInButton = styled.a`
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openSignIn } = useClerk();
+
+  const handleSignIn = () => {
+    openSignIn();
+  };
 
   return (
     <div>
@@ -100,7 +106,7 @@ const Layout = ({ children }) => {
             </Link>
           </LogoContainer>
           <MenuItems>
-            <SignInButton as="span">Sign In</SignInButton>
+            <SignInButton onClick={handleSignIn}>Sign In</SignInButton>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>

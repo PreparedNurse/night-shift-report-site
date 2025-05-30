@@ -1,6 +1,5 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import { useRouter } from "next/router";
-import { Global, css } from "@emotion/react";
+import { Global, css } from '@emotion/react';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const globalStyles = css`
   * {
@@ -22,14 +21,9 @@ const globalStyles = css`
   }
 `;
 
-const publicPages = ["/", "/sign-in", "/sign-up"];
-
 function MyApp({ Component, pageProps }) {
-  const { pathname } = useRouter();
-  const isPublicPage = publicPages.includes(pathname);
-
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
     </ClerkProvider>
