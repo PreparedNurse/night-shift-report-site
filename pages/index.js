@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
+// Forcing new deployment - May 29, 2024
 const HeroSection = styled.div`
   background-color: #000000;
   min-height: 80vh;
