@@ -92,6 +92,17 @@ const UserSection = styled.div`
   gap: 1rem;
 `;
 
+const MembersOnlyLink = styled.div`
+  a {
+    color: #ff0000 !important;
+    font-weight: bold !important;
+    
+    &:hover {
+      color: #cc0000 !important;
+    }
+  }
+`;
+
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -133,6 +144,11 @@ const Layout = ({ children }) => {
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
+            <SignedIn>
+              <MembersOnlyLink>
+                <Link href="/after-hours">After Hours</Link>
+              </MembersOnlyLink>
+            </SignedIn>
           </MenuItems>
         </Nav>
       </Header>
