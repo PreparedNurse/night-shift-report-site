@@ -1,12 +1,28 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { withClerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-// This example protects all routes including api/trpc routes
-// Please edit this to allow other routes to be public as needed.
-// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your middleware
-export default authMiddleware({
-  publicRoutes: ["/"]
+const publicPaths = ["/", "/about", "/episodes", "/contact"];
+
+function isPublic(path) {
+  return publicPaths.find((x) =>
+    path.match(new RegExp(`^${x}$`))
+  );
+}
+
+export default withClerkMiddleware((req) => {
+  if (isPublic(req.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+  // if the user is not signed in redirect them to the sign in page.
+  const { userId } = req.auth;
+  if (!userId) {
+    const signInUrl = new URL('/sign-in', req.url);
+    signInUrl.searchParams.set('redirect_url', req.url);
+    return NextResponse.redirect(signInUrl);
+  }
+  return NextResponse.next();
 });
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/"],
+  matcher: '/((?!_next/image|_next/static|favicon.ico).*)',
 }; 
