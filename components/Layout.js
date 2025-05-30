@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
-import { useClerk } from '@clerk/nextjs';
+import { SignInButton } from "@clerk/nextjs";
 
 const Header = styled.header`
   background-color: #000000;
@@ -64,31 +64,28 @@ const MenuItems = styled.div`
   }
 `;
 
-const SignInButton = styled.a`
-  background-color: #ff0000;
-  color: white !important;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s;
+const StyledSignInButton = styled.div`
   margin-right: auto;
   margin-left: -1rem;
-  text-decoration: none;
   
-  &:hover {
-    background-color: #cc0000;
+  button {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #cc0000;
+    }
   }
 `;
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { openSignIn } = useClerk();
-
-  const handleSignIn = () => {
-    openSignIn();
-  };
 
   return (
     <div>
@@ -106,7 +103,9 @@ const Layout = ({ children }) => {
             </Link>
           </LogoContainer>
           <MenuItems>
-            <SignInButton onClick={handleSignIn}>Sign In</SignInButton>
+            <StyledSignInButton>
+              <SignInButton mode="modal" />
+            </StyledSignInButton>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
