@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Header = styled.header`
   background-color: #000000;
@@ -84,6 +84,14 @@ const StyledSignInButton = styled.div`
   }
 `;
 
+const UserSection = styled.div`
+  margin-right: auto;
+  margin-left: -1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -103,9 +111,25 @@ const Layout = ({ children }) => {
             </Link>
           </LogoContainer>
           <MenuItems>
-            <StyledSignInButton>
-              <SignInButton mode="modal" />
-            </StyledSignInButton>
+            <SignedOut>
+              <StyledSignInButton>
+                <SignInButton mode="modal" />
+              </StyledSignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserSection>
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      userButtonAvatarBox: {
+                        width: '2.5rem',
+                        height: '2.5rem'
+                      }
+                    }
+                  }}
+                />
+              </UserSection>
+            </SignedIn>
             <Link href="/about">About Us</Link>
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
