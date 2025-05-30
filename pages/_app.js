@@ -22,8 +22,12 @@ const globalStyles = css`
 `;
 
 function MyApp({ Component, pageProps }) {
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+    return <div>Missing Publishable Key</div>;
+  }
+  
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider {...pageProps}>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
     </ClerkProvider>
