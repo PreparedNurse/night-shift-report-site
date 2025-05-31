@@ -92,7 +92,10 @@ const UserSection = styled.div`
   gap: 1rem;
 `;
 
-const MembersOnlyLink = styled.div`
+const MembersOnlyLinks = styled.div`
+  display: flex;
+  gap: 2rem;
+  
   a {
     color: #ff0000 !important;
     font-weight: bold !important;
@@ -145,9 +148,10 @@ const Layout = ({ children }) => {
             <Link href="/episodes">Episodes</Link>
             <Link href="/contact">Contact Us</Link>
             <SignedIn>
-              <MembersOnlyLink>
+              <MembersOnlyLinks>
                 <Link href="/after-hours">After Hours</Link>
-              </MembersOnlyLink>
+                <Link href="/about-you">About You</Link>
+              </MembersOnlyLinks>
             </SignedIn>
           </MenuItems>
         </Nav>
