@@ -39,6 +39,27 @@ const UserInfo = styled.div`
   }
 `;
 
+const FormSection = styled.div`
+  margin-top: 3rem;
+  
+  h2 {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-container {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 1rem;
+    
+    iframe {
+      border-radius: 8px;
+    }
+  }
+`;
+
 export default function AboutYou() {
   const { user } = useUser();
 
@@ -54,6 +75,20 @@ export default function AboutYou() {
               <p>Email: <span>{user?.emailAddresses[0]?.emailAddress}</span></p>
             </UserInfo>
           </ContentSection>
+          
+          <FormSection>
+            <h2>Update Your Information</h2>
+            <div className="form-container">
+              <iframe 
+                className="airtable-embed" 
+                src="https://airtable.com/embed/appf1jFZ5GRWbEm1Y/paghojN4mIW6hjCIY/form" 
+                frameBorder="0" 
+                width="100%" 
+                height="533" 
+                style={{ background: 'transparent', border: '1px solid #ccc' }}
+              />
+            </div>
+          </FormSection>
         </AboutYouContainer>
       </SignedIn>
       <SignedOut>
