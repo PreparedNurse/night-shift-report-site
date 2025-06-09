@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 // Force Vercel deployment - timestamp: May 29, 2024 - 20:45
 // Forcing new deployment - May 29, 2024
 const HeroSection = styled.div`
-  background-color: #000000;
+  background-color: transparent;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@ const HeroSection = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.8;
+    opacity: 1;
     z-index: 0;
   }
 
@@ -32,7 +32,7 @@ const HeroSection = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
     z-index: 1;
   }
 `;
