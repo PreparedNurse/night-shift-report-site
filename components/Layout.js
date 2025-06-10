@@ -23,7 +23,7 @@ const Header = styled.header`
     bottom: 0;
     background-image: url('/night-moon.png');
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     opacity: 0.9;
     z-index: 0;
