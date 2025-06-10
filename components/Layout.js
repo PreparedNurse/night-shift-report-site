@@ -20,11 +20,22 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/ekg-background.png');
-    background-size: contain;
+    background-image: url('/dark-forest.jpg');
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat-x;
-    opacity: 0.2;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
     z-index: 0;
   }
 `;
