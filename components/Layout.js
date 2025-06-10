@@ -21,11 +21,11 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/night-moon.png');
+    background-image: url('/banner-moon.png');
     background-size: cover;
-    background-position: top center;
+    background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.9;
+    opacity: 1;
     z-index: 0;
   }
 
@@ -36,7 +36,7 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
     z-index: 0;
   }
 `;
