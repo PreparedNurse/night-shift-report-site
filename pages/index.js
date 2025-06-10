@@ -9,12 +9,17 @@ const HeroSection = styled.div`
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-image: url('/hospital-hallway.jpg');
@@ -30,9 +35,11 @@ const HeroSection = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
     z-index: 1;
   }
 `;
