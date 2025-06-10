@@ -6,12 +6,13 @@ import { useRouter } from 'next/router';
 // Forcing new deployment - May 29, 2024
 const HeroSection = styled.div`
   background-color: transparent;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -1px;
   
   &::before {
     content: '';

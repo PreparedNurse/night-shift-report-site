@@ -122,7 +122,7 @@ const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header>
         <Nav>
           <LogoContainer>
@@ -168,7 +168,7 @@ const Layout = ({ children }) => {
           </MenuItems>
         </Nav>
       </Header>
-      <main style={{ marginTop: '80px' }}>{children}</main>
+      <main style={{ flex: 1 }}>{children}</main>
     </div>
   );
 };
