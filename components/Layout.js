@@ -12,6 +12,7 @@ const Header = styled.header`
   min-height: 80px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   &::before {
     content: '';
@@ -21,11 +22,12 @@ const Header = styled.header`
     right: 0;
     bottom: 0;
     background-image: url('/dark-forest.jpg');
-    background-size: cover;
+    background-size: 300px 100%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     opacity: 0.8;
     z-index: 0;
+    animation: slideBackground 60s linear infinite;
   }
 
   &::after {
@@ -35,8 +37,17 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
     z-index: 0;
+  }
+
+  @keyframes slideBackground {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 `;
 
