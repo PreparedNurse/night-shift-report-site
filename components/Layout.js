@@ -21,11 +21,11 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/dark-forest.jpg');
-    background-size: 300px 100%;
+    background-image: url('/night-moon.png');
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat-x;
-    opacity: 0.8;
+    background-repeat: no-repeat;
+    opacity: 0.9;
     z-index: 0;
   }
 
@@ -36,7 +36,7 @@ const Header = styled.header`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
     z-index: 0;
   }
 `;
