@@ -27,7 +27,6 @@ const Header = styled.header`
     background-repeat: repeat-x;
     opacity: 0.8;
     z-index: 0;
-    animation: slideBackground 60s linear infinite;
   }
 
   &::after {
@@ -39,15 +38,6 @@ const Header = styled.header`
     bottom: 0;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
     z-index: 0;
-  }
-
-  @keyframes slideBackground {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
   }
 `;
 
