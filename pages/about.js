@@ -62,6 +62,11 @@ export default function About() {
       url: 'https://www.instagram.com/thenightshiftreport',
       icon: '📸'
     },
+    {
+      name: 'TikTok',
+      url: 'https://www.tiktok.com/@thenightshiftreport?_t=ZP-8xuiUapnJTb&_r=1',
+      icon: '🎵'
+    },
     // Add more social links here as needed
   ];
 
