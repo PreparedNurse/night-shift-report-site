@@ -7,13 +7,18 @@ import Image from 'next/image';
 // Forcing new deployment - May 29, 2024
 const HeroSection = styled.div`
   background-color: transparent;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: -1px;
+  
+  @media (max-width: 768px) {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
   
   &::before {
     content: '';
@@ -53,12 +58,22 @@ const HeroContent = styled.div`
   position: relative;
   z-index: 2;
   color: white;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
   
   h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
     
     span {
       color: #ff0000;
@@ -70,6 +85,13 @@ const HeroContent = styled.div`
     max-width: 600px;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
   }
 `;
 
@@ -83,6 +105,12 @@ const Button = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
   
+  @media (max-width: 768px) {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+  }
+  
   &:hover {
     background-color: #cc0000;
   }
@@ -92,6 +120,10 @@ const EpisodeThumbnailSection = styled.div`
   background-color: #000000;
   padding: 4rem 2rem;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const EpisodeThumbnailContainer = styled.div`
@@ -99,6 +131,11 @@ const EpisodeThumbnailContainer = styled.div`
   margin: 0 auto;
   cursor: pointer;
   transition: transform 0.3s ease;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
   
   &:hover {
     transform: scale(1.05);
@@ -110,6 +147,11 @@ const EpisodeTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
   
   span {
     color: #ff0000;
@@ -123,6 +165,12 @@ const EpisodeDescription = styled.p`
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
 `;
 
 export default function Home() {
@@ -160,7 +208,10 @@ export default function Home() {
             style={{ 
               objectFit: 'cover',
               borderRadius: '10px',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+              boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+              width: '100%',
+              height: 'auto',
+              maxWidth: '800px'
             }}
             priority
           />
