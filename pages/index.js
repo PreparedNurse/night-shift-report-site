@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 // Force Vercel deployment - timestamp: May 29, 2024 - 20:45
 // Forcing new deployment - May 29, 2024
@@ -87,11 +88,52 @@ const Button = styled.button`
   }
 `;
 
+const EpisodeThumbnailSection = styled.div`
+  background-color: #000000;
+  padding: 4rem 2rem;
+  text-align: center;
+`;
+
+const EpisodeThumbnailContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const EpisodeTitle = styled.h2`
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  
+  span {
+    color: #ff0000;
+  }
+`;
+
+const EpisodeDescription = styled.p`
+  color: #cccccc;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export default function Home() {
   const router = useRouter();
 
   const handleClick = () => {
     router.push('/about');
+  };
+
+  const handleEpisodeClick = () => {
+    window.open('https://www.youtube.com/watch?v=snY5xHHen7I', '_blank');
   };
 
   return (
@@ -103,6 +145,27 @@ export default function Home() {
           <Button onClick={handleClick}>Where To Find Us</Button>
         </HeroContent>
       </HeroSection>
+      
+      <EpisodeThumbnailSection>
+        <EpisodeTitle>Latest <span>Episode</span></EpisodeTitle>
+        <EpisodeDescription>
+          Check out our most recent episode for the latest night shift stories and insights from the healthcare frontlines.
+        </EpisodeDescription>
+        <EpisodeThumbnailContainer onClick={handleEpisodeClick}>
+          <Image
+            src="/episode-1-thumbnail.png"
+            alt="Episode 1 Thumbnail - Click to watch on YouTube"
+            width={800}
+            height={450}
+            style={{ 
+              objectFit: 'cover',
+              borderRadius: '10px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+            }}
+            priority
+          />
+        </EpisodeThumbnailContainer>
+      </EpisodeThumbnailSection>
     </Layout>
   );
 }
