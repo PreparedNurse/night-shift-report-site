@@ -149,7 +149,7 @@ export default function Home() {
       <EpisodeThumbnailSection>
         <EpisodeTitle>Latest <span>Episode</span></EpisodeTitle>
         <EpisodeDescription>
-          Check out our most recent episode for the latest night shift stories and insights from the healthcare frontlines.
+          Check out our first episode on youtube by clicking the video below. You can also find us on spotify podcast and apple podcast by searching The Night Shift Report.
         </EpisodeDescription>
         <EpisodeThumbnailContainer onClick={handleEpisodeClick}>
           <Image
