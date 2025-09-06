@@ -63,6 +63,11 @@ export default function About() {
       icon: '🎧'
     },
     {
+      name: 'Spotify',
+      url: 'https://open.spotify.com/show/6CzgpqKQDa8EEPbC69Awgt?si=fd8610f10f494046',
+      icon: '🎶'
+    },
+    {
       name: 'Instagram',
       url: 'https://www.instagram.com/thenightshiftreport',
       icon: '📸'
