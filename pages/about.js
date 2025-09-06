@@ -58,6 +58,11 @@ export default function About() {
       icon: '📺'
     },
     {
+      name: 'Apple Podcasts',
+      url: 'https://podcasts.apple.com/us/podcast/the-night-shift-report/id1828311654',
+      icon: '🎧'
+    },
+    {
       name: 'Instagram',
       url: 'https://www.instagram.com/thenightshiftreport',
       icon: '📸'
