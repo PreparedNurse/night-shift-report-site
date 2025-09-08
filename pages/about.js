@@ -68,6 +68,11 @@ export default function About() {
       icon: '🎶'
     },
     {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/profile.php?id=61580090955527',
+      icon: '📘'
+    },
+    {
       name: 'Instagram',
       url: 'https://www.instagram.com/thenightshiftreport',
       icon: '📸'
